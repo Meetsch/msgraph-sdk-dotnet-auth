@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Auth
             ParentWindow = window;
             ParentPointer = pointer;
         }
-#elif NETSTANDARD1_3
+#elif NETSTANDARD1_3 || NETSTANDARD2_0
         /// <summary>
         /// Parent activity or window.
         /// </summary>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Auth
                     {
                         builder = builder.WithParentActivityOrWindow(ParentPointer);
                     }
-#elif NETSTANDARD1_3
+#elif NETSTANDARD1_3 || NETSTANDARD2_0
                     builder = builder.WithParentActivityOrWindow(Parent);
 #endif
                     authenticationResult = await builder.ExecuteAsync();
